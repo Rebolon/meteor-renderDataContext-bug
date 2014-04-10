@@ -1,0 +1,26 @@
+<head>
+  <title>meteor-bug-dataContext</title>
+</head>
+
+<body>
+  The aim is to describe a bug where i loose data context after the call to one helper
+  {{> mainTpl}}
+</body>
+
+<template name="mainTpl">
+  <h1>MainTpl</h1>
+  {{#each subjects}}
+  {{> getSubTpl}}
+  {{/each}}
+</template>
+
+<template name="subTpl">
+  <h2>SubTpl</h2>
+</template>
+
+<template name="dynTpl">
+  <span>
+  before: {{_id}} - {{title}}<br />
+  after: {{#if helperThatReturnTrue}}{{_id}} - {{title}}{{/if}}
+  </span>
+</template>
